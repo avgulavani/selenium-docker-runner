@@ -8,8 +8,8 @@ pipeline{
         }
         stage("Run Test'){
             steps{
-                sh "docker-compose up open-browser-module"
-				sh "docker-compose up simple-featurefile-test-module"
+                sh "docker-compose up open-browser-module",
+		sh "docker-compose up simple-featurefile-test-module"
             }
 
         }
