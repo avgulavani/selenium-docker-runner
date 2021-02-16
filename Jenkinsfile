@@ -1,6 +1,7 @@
 pipeline{
     agent any
-    stages{
+    stages
+    {
         stage("Start Grid"){
             steps{
                 sh "docker-compose up -d hub chrome firefox"
@@ -12,12 +13,11 @@ pipeline{
 		        sh "docker-compose up simple-featurefile-test-module"
             }
 
-        }
-		
-        stage ("Stop Grid"){
-            steps{
+        } 
+        post{
+            always{
+                archiveArtifacts artifacts:'output/**'
                 sh "docker-compose down"
             }
-        }    
-        }
+    }
     }

@@ -29,7 +29,7 @@ services:
       - MODULE=testng.xml
       - CUCUMBER_OPTIONS=classpath:featureFiles/open_browser.feature
     volumes:
-      - ./open-browser-test-result:/usr/share/dockerdemo/test-output
+      - ./output/open-browser-test-result:/usr/share/dockerdemo/test-output
   simple-featurefile-test-module:
     image: avgulavani/selenium-docker
     depends_on:
@@ -41,4 +41,4 @@ services:
       - MODULE=testng.xml
       - CUCUMBER_OPTIONS=classpath:featureFiles/sample.feature
     volumes:
-      - ./sample-test-result:/usr/share/dockerdemo/test-output
+      - ./output/sample-test-result:/usr/share/dockerdemo/test-output
