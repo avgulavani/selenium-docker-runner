@@ -4,7 +4,7 @@ pipeline{
     {
         stage("Pull latest images"){
             steps{
-                sudo sh "docker pull avgulavani/selenium-docker"
+                sh "docker pull avgulavani/selenium-docker"
             }
         }
         stage("Start Grid"){
